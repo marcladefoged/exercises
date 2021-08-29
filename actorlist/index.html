@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actorlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Actorlist</h1>
+<section id="list-container">
+    <template>
+        <article id="actors">
+            <h2 onclick="showPopUp()" id="actor"></h2>
+        <div class="popUp">
+            <div class="popUp-content">
+                <span onclick="hidePopUp()" class="close">&times;</span>
+                <h3 class="actor"></h3>
+                <p class="movie"></p>
+                </div>
+            </div>
+        </article>
+    </template>
+</section>
+
+
+    <script>
+        const container = document.querySelector("#list-container");
+        const template = document.querySelector("template");
+        const file = "actors.json";
+
+        async function getData(file) {
+            const result = await fetch(file);
+            const json = await result.json();
+            show(json);
+        }
+
+        function show(actors) {
+            actors.forEach(actor => {
+                let clone = template.cloneNode(true).content;
+                clone.querySelector("#actor").textContent = actor.fullname;
+                clone.querySelector(".actor").textContent = actor.fullname;
+                clone.querySelector(".movie").textContent = actor.movie;
+                container.appendChild(clone);
+            })
+        }
+        getData(file);
+
+        function showPopUp(actors) {
+            document.querySelector(".popUp").classList.remove("hide");
+            document.querySelector(".popUp").classList.add("show");
+        }
+
+        function hidePopUp(){
+        document.querySelector(".popUp").classList.remove("show");
+        document.querySelector(".popUp").classList.add("hide");
+        }
+    </script>
+</body>
+</html>
