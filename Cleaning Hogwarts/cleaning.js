@@ -68,6 +68,11 @@ student.lastname = student.lastname.substring(0, 1).toUpperCase() + student.last
 
 // adding images
 
+let imagefirst = student.firstname.substring(0, 1);
+let imagelast = student.lastname;
+
+student.image = (`images/${imagelast}` + `_` + `${imagefirst}.png`).toLowerCase();
+
 
 // cleaning house
 
