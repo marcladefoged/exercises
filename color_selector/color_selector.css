@@ -1,0 +1,11 @@
+.color_selector_ui {
+  height: 250px;
+  width: 500px;
+  background-color: grey;
+}
+
+.selected_color {
+  width: 125px;
+  height: 100px;
+  background-color: blue;
+}
