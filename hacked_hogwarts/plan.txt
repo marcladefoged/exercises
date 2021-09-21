@@ -1,0 +1,33 @@
+Hacked Hogwarts – feature overview
+
+•	(list) Show list of students
+	Show number of students listed
+
+•	(popup/modal) Click one student in the list to see details
+	“Theming” the modal with colors and crest, depending on the house of the student
+
+•	(filter) Filtering the list
+	By house (Gryffindor, Ravenclaw, HufflePuff, Slytherin)
+
+•	(expelling) Expel a student
+	Showing the list of expelled students
+
+•	(sorting) Sorting the list
+	First name, last name, house (a-z, z-a) 
+
+•	(total count) Show number of students in each house, and total students (and expelled)
+
+•	(hacking) Hacked Hogwarts
+	Insert yourself
+	“break” blood-status
+	“break” inq squad
+
+•	(prefect) Student can be made/toggled as prefects
+    Only two pr. House
+    Preferably a boy and a girl
+
+•	(search) Search for students in the list
+
+•	(inq squad) Inquisitorial Squad – adding and removing pure-bloods
+
+•	(blood status) Blood Status – find the blood-status of each student
