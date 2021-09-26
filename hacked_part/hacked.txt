@@ -1,0 +1,66 @@
+"use strict";
+
+
+// inject yourself 
+hackTheSystem() {
+const student = object.create(Student)
+
+student.firstname = "Marc";
+student.middlename = "Ladefoged";
+
+student.lastname = "Jensen";
+
+student.house = "gryffindor";
+
+student.id = studentArray.length;
+
+student.bloodStatus = "i";
+studentArray.push(student);
+showStudentList(studentArray);
+
+}
+
+// blood status
+
+// search function
+
+ step 1) make a search field
+
+function searchFieldInput(evt) {
+    showStudentList;
+    studentArray.filter((elm) => {
+return elm.firstName.toUpperCase().includes(evt.target.value.toUpperCase() || elm.middlename.toUpperCase().includes(evt.target.value.toUpperCase() || elm.lastName.toUpperCase().includes(evt.target.value.toUppercase() || elm.house.toUpperCase().includes(evt.target.value.toUpperCase()) )))
+
+    })
+}
+
+// expelling
+
+brug Splice (return value)
+
+find Element
+take it out of not expelled
+and put it in expelled
+
+how to find expelled person
+
+find index of person to be expelled
+
+Arrayfunction called findIndex (array.prototype.findIndex) SLÅ DET OP PÅ MDN
+
+can use that to find index of expelled student
+
+function expel(evt) {
+
+    expelledStudent.push(
+        studentArray.splice(
+           studentArray.findIndex((elm.id === id),
+           1
+           )[0] 
+        );
+    )
+}
+
+
+// prefects 
+PREFECTS IS ALMOST THE SAME AS ANIMAL WINNER!

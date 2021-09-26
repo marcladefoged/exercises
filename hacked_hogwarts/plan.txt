@@ -22,6 +22,12 @@ Hacked Hogwarts – feature overview
 	“break” blood-status
 	“break” inq squad
 
+INSERT yourself
+Show that hacking is on
+cant be expelled
+has to be toggled by clicking something secret
+copy student object
+
 •	(prefect) Student can be made/toggled as prefects
     Only two pr. House
     Preferably a boy and a girl
@@ -31,3 +37,9 @@ Hacked Hogwarts – feature overview
 •	(inq squad) Inquisitorial Squad – adding and removing pure-bloods
 
 •	(blood status) Blood Status – find the blood-status of each student
+
+
+MISSING:
+
+ADD Houses to list!
+

@@ -4,45 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hacked_hogwarts.css">
-    <title>Hacked Hogwarts</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Hogwarts Studentlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Hacked Hogwarts</h1>
-    <p>
-      Houses:
-      <button class="filter" data-action="filter" data-filter="gryffindor">Gryffindor</button>
-      <button class="filter" data-action="filter" data-filter="ravenclaw">Ravenclaw</button>
-      <button class="filter" data-action="filter" data-filter="hufflepuff">HufflePuff</button>
-      <button class="filter" data-action="filter" data-filter="slytherin">Slytherin</button>
-      <button class="filter" data-action="filter" data-filter="*">All houses</button>
-    </p>
+<header>
+    <img src="images/dementor.svg" alt="dementor" class="hack" id="dementor">
+    <!-- <img class="hogwarts" src="images/hogwarts.png" alt="hogwarts crest"> -->
+    <h1 class="glow">Hogwarts</h1>
+    <h2>The infamous Student List of 1991.</h2>
+    <!-- <button class="hacking">DO NOT PRESS!! </button> -->
+    <div id="navigator">
+        <div class="filtering">
+            <p>Filter by:</p>
+            <button class="filter" data-action="filter" data-filter="all">All</button>
+            <button class="filter" data-action="filter" data-filter="gryffindor">Gryffindor</button>
+            <button class="filter" data-action="filter" data-filter="hufflepuff">Hufflepuff</button>
+            <button class="filter" data-action="filter" data-filter="ravenclaw">Ravenclaw</button>
+            <button class="filter" data-action="filter" data-filter="slytherin">Slytherin</button>
+            <button class="filter" data-action="filter" data-filter="squad">Inquisitorial Squad</button>
+            <button class="filter" data-action="filter" data-filter="prefect">Prefects</button>
+            <button class="filter" data-action="filter" data-filter="expelled">Expelled students</button>
+        </div>
+        <div class="sorting">
+            <p>Sort by:</p>
+            <button class="filter" data-action="sort" data-sort="firstName">Firstname</button>
+            <button class="filter" data-action="sort" data-sort="lastName">Lastname</button>
+            <button class="filter" data-action="sort" data-sort="house">House</button>
+        </div>
+        <div class="searching">
+            <input type="search" id="searchfunction" placeholder="Search...">
+            <button id="search_btn" class="filter">Search</button>
+        </div>
+    </div>
+</header>
 
-    <hr>
+    <section id="students"></section>
 
-    <table id="list">
-      <thead>
-        <tr id="sorting">
-          <th data-action="sort" data-sort-direction="asc" data-sort="firstname">Firstname</th>
-          <th data-action="sort" data-sort-direction="asc" data-sort="middlename">Middlename</th>
-          <th data-action="sort" data-sort-direction="asc" data-sort="lastname">Lastname</th>
-          <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- student template will be copied and inserted here -->
-      </tbody>
-    </table>
+    <div id="popup"></div>
 
-    <template id="studentlist">
-      <tr>
-        <td data-field="firstname">FIRSTNAME</td>
-        <td data-field="middlename">MIDDLENAME</td>
-        <td data-field="lastname">LASTNAME</td>
-        <td data-field="house">HOUSE</td>
-      </tr>
+    <template id="student">
+        <article class="studentinfo">
+            <div id="studenttext">
+                <h2 data-field="firstname" class="name"></h2>
+                <h2 data-field="lastname" class="name"></h2>
+                <img data-field="image" class="image" src="" alt="">
+                <h3 data-field="housecrest"></h3>
+            </div>
+        </article>
     </template>
-    
-    <script src="hacked_hogwarts.js"></script>
+
+    <template id="popupinfo">
+        <div class="housecrest"></div>
+        <button id="close">&times;</button>
+        <img data-field="image" class="image" src="" alt="">
+        <img data-field="image" class="image" src="" alt="">
+        <img data-field="image" class="image" src="" alt="">
+        <p class="infotext" data-field="firstname"></p>
+        <p class="infotext" data-field="middlename"></p>
+        <p class="infotext" data-field="lastname"></p>
+        <p class="infotext" data-field="nickname"></p>
+        <p class="infotext" data-field="bloodstatus"></p>
+        <div class ="buttons">
+            <button id="prefect button"></button>
+            <button id="squad button"></button>
+            <button id="prefect button"></button>
+            <button id="captain button"></button>
+        </div>
+    </template>
+
+    <div id="remove_AorB" class="modal hide">
+        <div class="dialog">
+          <button class="close_dialog">X</button>
+          <h2>There can only be two prefects from each house! <br>Remove on of the following:
+          </h2>
+          <div class="sidebyside">
+            <button id="removeA">Remove <span data-field="prefectA"> A</span></button>
+            <button id="removeB">Remove <span data-field="prefectB"> B</span></button>
+          </div>
+        </div>
+      </div>
+
+    <div id="overlay"></div>
+    <script src="script.js"></script>
 </body>
 </html>
